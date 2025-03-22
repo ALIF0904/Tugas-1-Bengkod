@@ -19,9 +19,24 @@ class User extends Authenticatable
      */
     protected $fillable = [
         'name',
+        'alamat',
+        'no_hp',
         'email',
+        'role',
         'password',
     ];
+    
+    public function periksaSebagaiPasien(){
+        return $this->hasmany(Periksa::class, 'Id_pasien','id');
+
+    }
+
+    public function periksaSebagaiDokter(){
+        return $this->hasmany(Periksa::class, 'd_dokter','id');
+
+    }
+    
+    
 
     /**
      * The attributes that should be hidden for serialization.
