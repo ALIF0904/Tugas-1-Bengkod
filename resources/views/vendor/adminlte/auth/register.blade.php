@@ -54,6 +54,40 @@
                 </span>
             @enderror
         </div>
+        {{-- alamat field --}}
+        <div class="input-group mb-3">
+            <input type="text" name="alamat" class="form-control @error('alamat') is-invalid @enderror"
+                value="{{ old('alamat') }}" placeholder="alamat">
+
+            <div class="input-group-append">
+                <div class="input-group-text">
+                    <span class="fas fa-envelope {{ config('adminlte.classes_auth_icon', '') }}"></span>
+                </div>
+            </div>
+
+            @error('alamat')
+                <span class="invalid-feedback" role="alert">
+                    <strong>{{ $message }}</strong>
+                </span>
+            @enderror
+        </div>
+        {{-- Email field --}}
+        <div class="input-group mb-3">
+            <input type="number" name="no_hp" class="form-control @error('no_hp') is-invalid @enderror"
+                value="{{ old('no_hp') }}" placeholder="no hp">
+
+            <div class="input-group-append">
+                <div class="input-group-text">
+                    <span class="fas fa-envelope {{ config('adminlte.classes_auth_icon', '') }}"></span>
+                </div>
+            </div>
+
+            @error('no_hp')
+                <span class="invalid-feedback" role="alert">
+                    <strong>{{ $message }}</strong>
+                </span>
+            @enderror
+        </div>
 
         {{-- Password field --}}
         <div class="input-group mb-3">

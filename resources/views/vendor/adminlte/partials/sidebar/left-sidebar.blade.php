@@ -55,9 +55,15 @@
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a href="/actionlogout" class="nav-link ">
+                        <a href="#" class="nav-link"
+                            onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
                             <p>Logout</p>
                         </a>
+
+                        <form id="logout-form" action="{{ route('actionlogout') }}" method="POST"
+                            style="display: none;">
+                            @csrf
+                        </form>
                     </li>
                 @elseif (auth()->user()->role == 'pasien')
                     <div class="user-panel mt-3 pb-3 mb-3 d-flex align-items-center">
@@ -79,15 +85,18 @@
                             <p>Periksa</p>
                         </a>
                     </li>
+
+
                     <li class="nav-item">
-                        <a href="/pasien/riwayat" class="nav-link @if (request()->is('pasien/riwayat')) active @endif">
-                            <p>Riwayat</p>
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="/actionlogout" class="nav-link ">
+                        <a href="#" class="nav-link"
+                            onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
                             <p>Logout</p>
                         </a>
+
+                        <form id="logout-form" action="{{ route('actionlogout') }}" method="POST"
+                            style="display: none;">
+                            @csrf
+                        </form>
                     </li>
                 @else
                     @each('adminlte::partials.sidebar.menu-item', $adminlte->menu('sidebar'), 'item')
