@@ -7,11 +7,9 @@
     "license": "MIT",
     "require": {
         "php": "^8.2",
-        "jeroennoten/laravel-adminlte": "^3.15",
         "laravel/framework": "^12.0",
         "laravel/tinker": "^2.10.1",
-        "laravel/ui": "^4.6",
-        "spatie/laravel-permission": "^6.17"
+        "laravel/ui": "^4.6"
     },
     "require-dev": {
         "fakerphp/faker": "^1.23",
@@ -56,6 +54,9 @@
         ]
     },
     "extra": {
+        "branch-alias": {
+            "dev-master": "12.x-dev"
+        },
         "laravel": {
             "dont-discover": []
         }
@@ -69,6 +70,6 @@
             "php-http/discovery": true
         }
     },
-    "minimum-stability": "stable",
+    "minimum-stability": "dev",
     "prefer-stable": true
 }
